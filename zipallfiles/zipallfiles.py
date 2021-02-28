@@ -12,8 +12,6 @@ import time
 def zip_file(filetozip):
     tmpname = pathlib.PurePath(filetozip).stem   # 拡張子を取り除く
     zipname = tmpname + '.zip'
-    # print(zipname)
-    # print(filetozip)
     with zipfile.ZipFile(zipname, 'w', zipfile.ZIP_DEFLATED) as myzip:
         myzip.write(filetozip)
     
@@ -40,12 +38,7 @@ if __name__ == '__main__':
     elapse_time = time.time() - start_time
     print("Elapse time = {}".format(elapse_time))
 
-# for file in files:
-#     tmpname = pathlib.PurePath(file).stem   # 拡張子を取り除く
-#     zipname = tmpname + '.zip'
-#     with zipfile.ZipFile(zipname, 'w', zipfile.ZIP_DEFLATED) as myzip:
-#         myzip.write(file)
-#     print(zipname)
+
     
 
 

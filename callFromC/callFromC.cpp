@@ -1,6 +1,6 @@
 //
 // A simple example of calling python code from C/C++.
-// - only tested on Linux Mint 20.04 / gcc9.3 / Anaconda / python3.9 environment
+// - only tested on Linux Mint 20.04 / gcc9.3 / Anaconda4.10.1 / python3.9 environment
 // 
 
 #include <stdio.h>

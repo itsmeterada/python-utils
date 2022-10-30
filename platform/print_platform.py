@@ -4,54 +4,40 @@ from os import getenv
 # from pathlib import Path
 # from tempfile import gettempdir
 
+_platform = platform.platform()
+_system = platform.system()
+_release = platform.release()
+_version = platform.version()
+_machine = platform.machine()
+_processor = platform.processor()
+_architecture = platform.architecture()
+_node = platform.node()
+_uname = platform.uname()
+_python_build = platform.python_build()
+_python_compiler = platform.python_compiler()
+_python_branch = platform.python_branch()
+_python_implementation = platform.python_implementation()
+_python_revision = platform.python_revision()
+_python_version = platform.python_version()
+_python_version_tuple = platform.python_version_tuple()
+
 def print_platform_info():
   # ==============================
-  _platform = platform.platform()
   print(f'Platform: {_platform}')                     # Platform: Windows-10-10.0.19041-SP0
-
-  _system = platform.system()
   print(f'System: {_system}')                         # System: Windows
-
-  _release = platform.release()
   print(f'Release: {_release}')                       # Release: 10
-
-  _version = platform.version()
   print(f'Version: {_version}')                       # Version: 10.0.19041
-
-  _machine = platform.machine()
   print(f'Machine: {_machine}')                       # Machine: AMD64
-
-  _processor = platform.processor()
   print(f'Processor: {_processor}')                   # Processor: Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
-
-  _architecture = platform.architecture()
   print(f'Architecture: {_architecture}')             # Architecture: ('64bit', 'WindowsPE')
-
-  _node = platform.node()
   print(f'Node: {_node}')                             # Node: Kitchen
-
-  _uname = platform.uname()
   print(f'Uname: {_uname}')                           # Uname: uname_result(system='Windows', node='Kitchen', release='10', version='10.0.19041', machine='AMD64', processor='Intel64 Family 6 Model 142 Stepping 12, GenuineIntel')
-
-  _python_build = platform.python_build()
   print(f'Python build: {_python_build}')             # Python build: ('default', 'Oct  8 2020 12:12:24')
-
-  _python_compiler = platform.python_compiler()
   print(f'Python compiler: {_python_compiler}')       # Python compiler: MSC v.1916 64 bit (AMD64)
-
-  _python_branch = platform.python_branch()
   print(f'Python branch: {_python_branch}')           # Python branch: tags/v3.8.6
-
-  _python_implementation = platform.python_implementation()
   print(f'Python implementation: {_python_implementation}')   # Python implementation: CPython
-
-  _python_revision = platform.python_revision()
   print(f'Python revision: {_python_revision}')       # Python revision: 0
-
-  _python_version = platform.python_version()
   print(f'Python version: {_python_version}')         # Python version: 3.8.6
-
-  _python_version_tuple = platform.python_version_tuple()
   print(f'Python version tuple: {_python_version_tuple}')     # Python version tuple: ('3', '8', '6')
 
 
@@ -92,4 +78,5 @@ def print_windows_env():
 if __name__ == '__main__':
   args = sys.argv
   print_platform_info()
-  print_windows_env()
+  if (_system == 'Windows'):
+    print_windows_env()

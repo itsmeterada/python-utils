@@ -33,7 +33,11 @@ def extract_and_format_text_from_xml(xml_file_path):
         text = html.unescape(p.text)
         # テキストを80文字以内で整形する
         wrapped_text = textwrap.fill(text, width=80)
-        paragraphs.append(wrapped_text)
+        s = wrapped_text.encode('cp932', "ignore")
+        #words = str(s)
+        words = s.decode('utf-8')
+        paragraphs.append(words)
+        #paragraphs.append(wrapped_text)
 
     print("\n".join(paragraphs))
 
